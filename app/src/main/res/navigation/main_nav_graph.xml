@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="uz.appe.talimiyinfografika.ui.menu.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/item_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_subjectFragment"
+            app:destination="@id/subjectFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_workFragment"
+            app:destination="@id/workFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectFragment"
+        android:name="uz.appe.talimiyinfografika.ui.subject.SubjectFragment"
+        android:label="SubjectFragment"
+        tools:layout="@layout/fragment_subject">
+        <action
+            android:id="@+id/action_subjectFragment_to_subjectInnerFragment"
+            app:destination="@id/subjectInnerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="uz.appe.talimiyinfografika.ui.tasks.TasksFragment"
+        android:label="TasksFragment"
+        tools:layout="@layout/fragment_task">
+        <action
+            android:id="@+id/action_tasksFragment_to_tasksInnerFragment"
+            app:destination="@id/tasksInnerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="uz.appe.talimiyinfografika.ui.test.TestFragment"
+        android:label="TestFragment"
+        tools:layout="@layout/fragment_test" />
+    <fragment
+        android:id="@+id/subjectInnerFragment"
+        android:name="uz.appe.talimiyinfografika.ui.subject.SubjectInnerFragment"
+        android:label="SubjectInnerFragment"
+        tools:layout="@layout/fragment_subject_inner">
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+        <argument
+            android:name="name"
+            app:argType="string"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/tasksInnerFragment"
+        android:name="uz.appe.talimiyinfografika.ui.tasks.TasksInnerFragment"
+        android:label="TasksInnerFragment"
+        tools:layout="@layout/fragment_task_inner" >
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+        <argument
+            android:name="name"
+            app:argType="string"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/workFragment"
+        tools:layout="@layout/fragment_work"
+        android:name="uz.appe.talimiyinfografika.ui.work.WorkFragment"
+        android:label="WorkFragment" />
+</navigation>
